@@ -5,28 +5,28 @@
 class Certinfo < Formula
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "0.52"
+  version "0.53"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/0.52/certinfo_0.52_darwin_amd64.tar.gz"
-      sha256 "3f2648c5ca6b211b83d5c7502cd997308020b7484410a14cc2b786412736c18b"
+      url "https://github.com/pete911/certinfo/releases/download/0.53/certinfo_0.53_darwin_amd64.tar.gz"
+      sha256 "09f142ae1934a13eedc4836ffabe9558d85a88409a8fe1230820953cd80f0848"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pete911/certinfo/releases/download/0.52/certinfo_0.52_darwin_arm64.tar.gz"
-      sha256 "c39c44b354055ce21b7ea202e6cbe0fe3d4b34b8a0197b8c849eee2068833fa2"
+      url "https://github.com/pete911/certinfo/releases/download/0.53/certinfo_0.53_darwin_arm64.tar.gz"
+      sha256 "6f817351815a01b5085edff9ebee09ac764e292227506e6f69b596d8b204723d"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/0.52/certinfo_0.52_linux_amd64.tar.gz"
-      sha256 "63658a0c406bc91f1d02017b25d95531694674067fd1f40ce22102692c9fd580"
+      url "https://github.com/pete911/certinfo/releases/download/0.53/certinfo_0.53_linux_amd64.tar.gz"
+      sha256 "05fd61bc18c394b4bcc65dbcd4ad58d10ecffa4bab62dbe22a4f63f9dad377e2"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/certinfo/releases/download/0.52/certinfo_0.52_linux_arm64.tar.gz"
-      sha256 "8ea9b37720b59a706a6e44d2c987ae2d4f11bd01041a47c04d8822be690365f7"
+      url "https://github.com/pete911/certinfo/releases/download/0.53/certinfo_0.53_linux_arm64.tar.gz"
+      sha256 "5e98e768899ab73c3fbd909fe3b925b1d837372681f26435c8bf2240d74f104d"
     end
   end
 
