@@ -5,28 +5,28 @@
 class Jwt < Formula
   desc "jwt cli"
   homepage "https://github.com/pete911/jwt"
-  version "1.0.1"
+  version "1.0.2"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.1/jwt_1.0.1_darwin_amd64.tar.gz"
-      sha256 "1cf0117ae5d6709f3ae9a485f9a114fff122f71ea929406b258eb859d3c52f2f"
+      url "https://github.com/pete911/jwt/releases/download/v1.0.2/jwt_1.0.2_darwin_amd64.tar.gz"
+      sha256 "d04336ebd082d25acc5d026a30cc8d4ab825c734af552b74cafd248b965d2fab"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.1/jwt_1.0.1_darwin_arm64.tar.gz"
-      sha256 "ea10783ee5bc14d43b80d367b8731bf85bdf2abcf177046a86fd9ceb66d6bf83"
+      url "https://github.com/pete911/jwt/releases/download/v1.0.2/jwt_1.0.2_darwin_arm64.tar.gz"
+      sha256 "9a677fe62e748f0c17f1e4a0585ec4f294edfe394c3fcf6ed4d08e2873e9bf3b"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.1/jwt_1.0.1_linux_amd64.tar.gz"
-      sha256 "5a5764acc613e4c8b67046160f8dd764079393e7ae70b8dc296bf55faaa16a00"
+      url "https://github.com/pete911/jwt/releases/download/v1.0.2/jwt_1.0.2_linux_amd64.tar.gz"
+      sha256 "34d552bf22c0a3aa44c736ed352f1f9adc60373a4f62fb93a7e1b96cf768f5aa"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.1/jwt_1.0.1_linux_arm64.tar.gz"
-      sha256 "e035ed1eed232aff3fc457a492a8b6f8c49831eaa1b788bd5941e488fe03d5bf"
+      url "https://github.com/pete911/jwt/releases/download/v1.0.2/jwt_1.0.2_linux_arm64.tar.gz"
+      sha256 "2c1c4d1638acc8081456529af62ba3a7509708114a87d85eb2ba03394c804eed"
     end
   end
 
