@@ -5,33 +5,44 @@
 class Ipcalc < Formula
   desc "IP calculator"
   homepage "https://github.com/pete911/ipcalc"
-  version "1.0.0"
-  bottle :unneeded
+  version "1.0.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.0/ipcalc_1.0.0_darwin_amd64.tar.gz"
-      sha256 "471f5ae5ee84e77d3db12cbbb825eaa4604de0f38a69e092d016f7a4fffec338"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.0/ipcalc_1.0.0_darwin_arm64.tar.gz"
-      sha256 "f27445a2bb0b37be93b0413cc85ba86051271a2526d9dc953b2cceb8270f05d4"
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.1/ipcalc_1.0.1_darwin_arm64.tar.gz"
+      sha256 "63a2e7ad67ec5e6e45a9bf928993c3d93c382f26df3ecc6e676c687d92d21c47"
+
+      def install
+        bin.install "ipcalc"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.1/ipcalc_1.0.1_darwin_amd64.tar.gz"
+      sha256 "f8d1852979ae804254ec68525be1ba08e07f4abf3a3af95fd087c1858f424010"
+
+      def install
+        bin.install "ipcalc"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.0/ipcalc_1.0.0_linux_amd64.tar.gz"
-      sha256 "2c007b1de0c5eea03c9433465e39bb05d09dce25d5ba4127e82e11d220348103"
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.1/ipcalc_1.0.1_linux_amd64.tar.gz"
+      sha256 "28443d14381362c2614eb2b55870feda100379198bb03f3cc5e3c4e99c4eed21"
+
+      def install
+        bin.install "ipcalc"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.0/ipcalc_1.0.0_linux_arm64.tar.gz"
-      sha256 "40655592cd5129330a2ff060927291fbd761c754020193646194127f42474307"
-    end
-  end
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.1/ipcalc_1.0.1_linux_arm64.tar.gz"
+      sha256 "ef37498a866a38cfa52e64175e5d12c08b8361e90163f130495d0fee0bd2f296"
 
-  def install
-    bin.install "ipcalc"
+      def install
+        bin.install "ipcalc"
+      end
+    end
   end
 
   test do
