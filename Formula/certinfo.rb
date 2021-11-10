@@ -5,20 +5,20 @@
 class Certinfo < Formula
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.1/certinfo_1.0.1_darwin_arm64.tar.gz"
-      sha256 "92c5cb5def93f8afc1660fd05932326c7e67ae9bae58c6fa81f7dcf75002c18f"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.2/certinfo_1.0.2_darwin_amd64.tar.gz"
+      sha256 "a5a8c128a3d66f80391fe6776c78be3f5ec5ebd4cb66dd25984db353f1086694"
 
       def install
         bin.install "certinfo"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.1/certinfo_1.0.1_darwin_amd64.tar.gz"
-      sha256 "eedaab7999c72bf327849a6c084a84529cd7f19c32b206473ba98406893bf511"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.2/certinfo_1.0.2_darwin_arm64.tar.gz"
+      sha256 "5cd73d98b5de8ae69970152b00843ce13820720c09b25d37c365f5ec118ee694"
 
       def install
         bin.install "certinfo"
@@ -28,16 +28,16 @@ class Certinfo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.1/certinfo_1.0.1_linux_arm64.tar.gz"
-      sha256 "b63e8ac1e6aba72207bff972d320d5a27f6535a49f9354827ba3667c3997fc6c"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.2/certinfo_1.0.2_linux_arm64.tar.gz"
+      sha256 "a1276b991327b60f812ed62e20b497c14801f9fd0c36a7efb1243790bc10e9f5"
 
       def install
         bin.install "certinfo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.1/certinfo_1.0.1_linux_amd64.tar.gz"
-      sha256 "bface17f4d1e616b3ffbd88c056315c2a758babdf9073042fcf1377c561bda94"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.2/certinfo_1.0.2_linux_amd64.tar.gz"
+      sha256 "1f62ec4563a65006958e16d7c34b94af37f3427081a5a17bae415202498165cc"
 
       def install
         bin.install "certinfo"
