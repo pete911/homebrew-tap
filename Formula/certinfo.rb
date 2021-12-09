@@ -5,20 +5,20 @@
 class Certinfo < Formula
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.5"
+  version "1.0.6"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.5/certinfo_1.0.5_darwin_amd64.tar.gz"
-      sha256 "a3a4071bb96b5f3bb71bee423cf9aa81d8c7e0a0ef7e1569509bd265d311668d"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.6/certinfo_1.0.6_darwin_arm64.tar.gz"
+      sha256 "01dc67e200f32e349d66d55084dc1c03df0a615739daad4af099ffd28ff61980"
 
       def install
         bin.install "certinfo"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.5/certinfo_1.0.5_darwin_arm64.tar.gz"
-      sha256 "3cf0f0a8d9f1395241e0e97ce85eb564f7d48aa843c6cf33a6d9168d44c12f1a"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.6/certinfo_1.0.6_darwin_amd64.tar.gz"
+      sha256 "62b04364430eb8f4f0ee122eb6a268a253713453997ed66eb5054f5248c95b55"
 
       def install
         bin.install "certinfo"
@@ -27,17 +27,17 @@ class Certinfo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.5/certinfo_1.0.5_linux_amd64.tar.gz"
-      sha256 "5ccfe0f76813c661efff38b6a5ab4b1ad08d3ede237afe56676234917a373bf6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.6/certinfo_1.0.6_linux_arm64.tar.gz"
+      sha256 "2a1c88dec3d495eaeabafdefc1712e92211e0ab48a774204f5916b5cd075eda9"
 
       def install
         bin.install "certinfo"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.5/certinfo_1.0.5_linux_arm64.tar.gz"
-      sha256 "8fd1e81eaec94fd2d7b84a50259d7526db1674a83ee982cd56f59f7fdc674fb0"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.6/certinfo_1.0.6_linux_amd64.tar.gz"
+      sha256 "c0c08a921b650b20335ff33c3fe45cd52ae58c63c5cf8702a4b9a1d2957f1f5a"
 
       def install
         bin.install "certinfo"
