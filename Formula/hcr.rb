@@ -5,20 +5,20 @@
 class Hcr < Formula
   desc "GitHub pages helm chart releaser."
   homepage "https://github.com/pete911/hcr"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.2/hcr_0.0.2_darwin_amd64.tar.gz"
-      sha256 "56c2e85113fd9a920cdfa47e90cafc7deec92ef1a3395f85363737692500a92e"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_darwin_arm64.tar.gz"
+      sha256 "fced49b126560627547f76804e252dbbc124051265581adf079667c02d95a3d8"
 
       def install
         bin.install "hcr"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.2/hcr_0.0.2_darwin_arm64.tar.gz"
-      sha256 "682d07a1a7e9112d7965402b9fae0fe298178012b0fee7cff24dfca302a04e49"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_darwin_amd64.tar.gz"
+      sha256 "5030851eec1d329854b758662151e347295aa5f5cb30277f8b2aea3f0a2f07b2"
 
       def install
         bin.install "hcr"
@@ -28,16 +28,16 @@ class Hcr < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.2/hcr_0.0.2_linux_arm64.tar.gz"
-      sha256 "2075ca4e7bda77a821d585aaf237aef3ccccd8811dbe0850d8945e8e14cc4d7c"
+      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_linux_arm64.tar.gz"
+      sha256 "be374e5749736494f28b709d98f86fe8224b0f37887cf3753c8313b87b0ed7d7"
 
       def install
         bin.install "hcr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.2/hcr_0.0.2_linux_amd64.tar.gz"
-      sha256 "6341cd8573a412d19b27a1d3de0b7018cbb5fdd7c5bdd97e5fae7aef13ffdf00"
+      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_linux_amd64.tar.gz"
+      sha256 "1a312359f86e390c1ca34505038fd3f76706ee653325a9004bbb46c059e30ff8"
 
       def install
         bin.install "hcr"
