@@ -5,20 +5,20 @@
 class Hcr < Formula
   desc "GitHub pages helm chart releaser."
   homepage "https://github.com/pete911/hcr"
-  version "0.0.3"
+  version "0.0.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_darwin_arm64.tar.gz"
-      sha256 "fced49b126560627547f76804e252dbbc124051265581adf079667c02d95a3d8"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/hcr/releases/download/v0.0.4/hcr_0.0.4_darwin_amd64.tar.gz"
+      sha256 "4a322490852d4d5f2e15c3b83a95e9fa4b3ed2b2b3b5eb59696b53b6b2acc310"
 
       def install
         bin.install "hcr"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_darwin_amd64.tar.gz"
-      sha256 "5030851eec1d329854b758662151e347295aa5f5cb30277f8b2aea3f0a2f07b2"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/hcr/releases/download/v0.0.4/hcr_0.0.4_darwin_arm64.tar.gz"
+      sha256 "0bae3bedd7779c6afe185315bc1b9514fbc51b8b1353331863e854ce9e1f0bb0"
 
       def install
         bin.install "hcr"
@@ -28,16 +28,16 @@ class Hcr < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_linux_arm64.tar.gz"
-      sha256 "be374e5749736494f28b709d98f86fe8224b0f37887cf3753c8313b87b0ed7d7"
+      url "https://github.com/pete911/hcr/releases/download/v0.0.4/hcr_0.0.4_linux_arm64.tar.gz"
+      sha256 "16ed21abc61abc286311304a8800524e57a26f90af77610029a44c8321602716"
 
       def install
         bin.install "hcr"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/hcr/releases/download/v0.0.3/hcr_0.0.3_linux_amd64.tar.gz"
-      sha256 "1a312359f86e390c1ca34505038fd3f76706ee653325a9004bbb46c059e30ff8"
+      url "https://github.com/pete911/hcr/releases/download/v0.0.4/hcr_0.0.4_linux_amd64.tar.gz"
+      sha256 "19dbdd1b1a06e4c43ff3e2e6c74c8b8e77c47abf88621072d07188d3506e745f"
 
       def install
         bin.install "hcr"
