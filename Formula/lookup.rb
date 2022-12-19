@@ -5,20 +5,20 @@
 class Lookup < Formula
   desc "Lookup domain information."
   homepage "https://github.com/pete911/lookup"
-  version "1.0.0"
+  version "1.0.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/lookup/releases/download/v1.0.0/lookup_1.0.0_darwin_arm64.tar.gz"
-      sha256 "c6683d5e8aa26894175d0c121f2dd46ae4c01964a18785a01a5be60cb187844f"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/lookup/releases/download/v1.0.1/lookup_1.0.1_darwin_amd64.tar.gz"
+      sha256 "eb929f940816a773c25bdf0f3ce388c08bab96b94941577a4b0cd7fac40cabf4"
 
       def install
         bin.install "lookup"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/lookup/releases/download/v1.0.0/lookup_1.0.0_darwin_amd64.tar.gz"
-      sha256 "1b7eb29cecbe263be5585026c04cd5e9805ba6185040a1594bba60de71a61dc0"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/lookup/releases/download/v1.0.1/lookup_1.0.1_darwin_arm64.tar.gz"
+      sha256 "5097df0e7b782d58a2759c765b9f79618fce4cb3efcffb60e5e33068d79cd978"
 
       def install
         bin.install "lookup"
@@ -28,16 +28,16 @@ class Lookup < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/lookup/releases/download/v1.0.0/lookup_1.0.0_linux_arm64.tar.gz"
-      sha256 "051375238a99b468f9809c1a3f36d913d6f273819459b7ca01e23074a944a9c4"
+      url "https://github.com/pete911/lookup/releases/download/v1.0.1/lookup_1.0.1_linux_arm64.tar.gz"
+      sha256 "aed6ff774381743fd2589f77d458d7c9f14010ac7872c0dfd235713b47e83a1b"
 
       def install
         bin.install "lookup"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/lookup/releases/download/v1.0.0/lookup_1.0.0_linux_amd64.tar.gz"
-      sha256 "954b55084675e764c84d40da85c8babe0ca5840b82343fd317d6efd106bb7e1b"
+      url "https://github.com/pete911/lookup/releases/download/v1.0.1/lookup_1.0.1_linux_amd64.tar.gz"
+      sha256 "e4f95bb1fbf281f55fac7072dbedcf202020b368882409583d76773864ce0e73"
 
       def install
         bin.install "lookup"
