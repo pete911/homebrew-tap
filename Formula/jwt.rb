@@ -5,20 +5,20 @@
 class Jwt < Formula
   desc "jwt cli"
   homepage "https://github.com/pete911/jwt"
-  version "1.0.3"
+  version "1.0.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.3/jwt_1.0.3_darwin_amd64.tar.gz"
-      sha256 "8320154e1e7fcc80ed948357dfd04aa8dd91fdc09ea93a52d50c5e51689124e8"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_darwin_arm64.tar.gz"
+      sha256 "a6e0625cccefc66ff8ef7ee58006376a2e6b0efbf95b5639768a6359642259f3"
 
       def install
         bin.install "jwt"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.3/jwt_1.0.3_darwin_arm64.tar.gz"
-      sha256 "d3069d66a8c7aa1b914389bae2213bcf70c4e5dd98c500ce6b6683e69ae91116"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_darwin_amd64.tar.gz"
+      sha256 "7ced0f814378b3b58ae001f876178e6b4e8f579ba4cb24512eb50b1040cacab2"
 
       def install
         bin.install "jwt"
@@ -28,16 +28,16 @@ class Jwt < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.3/jwt_1.0.3_linux_amd64.tar.gz"
-      sha256 "8b9a1391da9e486f00313f3b7c6a508aeca7dcbd689e0ed87c0e22f7f5707a31"
+      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_linux_amd64.tar.gz"
+      sha256 "f5f6a17fe6c12617686f967db73c87a48e7ab000d7c53597700959ad928a9228"
 
       def install
         bin.install "jwt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.3/jwt_1.0.3_linux_arm64.tar.gz"
-      sha256 "e2614999db36b55b29e323942c4045fbc92d862fdeb876fc9f71c0b033ca517a"
+      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_linux_arm64.tar.gz"
+      sha256 "10f563bdf8c5fe4dbd32e216a5148a4d035ce3261a274f3dcb470fe8a71e4ac2"
 
       def install
         bin.install "jwt"
