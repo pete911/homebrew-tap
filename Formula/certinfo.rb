@@ -5,20 +5,20 @@
 class Certinfo < Formula
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.14"
+  version "1.0.15"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.14/certinfo_1.0.14_darwin_amd64.tar.gz"
-      sha256 "f717143ad7cb8d6383fc18a40d11397275238a64b0ac7088943fcd916f7950f3"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.15/certinfo_1.0.15_darwin_arm64.tar.gz"
+      sha256 "11951ae5798344abca76d78f2f7812d7ac439c708e9c1f7aabb8ff274c0282d5"
 
       def install
         bin.install "certinfo"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.14/certinfo_1.0.14_darwin_arm64.tar.gz"
-      sha256 "3496e14aa3161a9cee2a02de6b908c9a97a6190caaf7b4b87c48b5595d377311"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.15/certinfo_1.0.15_darwin_amd64.tar.gz"
+      sha256 "1953cb20605bae17e93b8bf79256c25f59a15ba623a20d7ed93cf6ebb79f3654"
 
       def install
         bin.install "certinfo"
@@ -28,16 +28,16 @@ class Certinfo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.14/certinfo_1.0.14_linux_arm64.tar.gz"
-      sha256 "333b9202005a1f0be6d2755e9247d20532cc2929e6664fdb9383f50e5226c59e"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.15/certinfo_1.0.15_linux_arm64.tar.gz"
+      sha256 "a92605a5189e647d256ca16fcdaecb64482c070ebc16964e8b50900cb224a8d3"
 
       def install
         bin.install "certinfo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.14/certinfo_1.0.14_linux_amd64.tar.gz"
-      sha256 "15a46b20908fa682a2f29aa455be22daf42675dc766cafcffb0c49acc9d3e271"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.15/certinfo_1.0.15_linux_amd64.tar.gz"
+      sha256 "387e76a46b46204d6b4a947425d86dce24562982a80756f6655b6bb22b55f314"
 
       def install
         bin.install "certinfo"
