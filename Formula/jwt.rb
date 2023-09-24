@@ -5,20 +5,20 @@
 class Jwt < Formula
   desc "jwt cli"
   homepage "https://github.com/pete911/jwt"
-  version "1.0.4"
+  version "1.0.5"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_darwin_arm64.tar.gz"
-      sha256 "a6e0625cccefc66ff8ef7ee58006376a2e6b0efbf95b5639768a6359642259f3"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/jwt/releases/download/v1.0.5/jwt_1.0.5_darwin_amd64.tar.gz"
+      sha256 "fb4f71cf48e9de5545613e4b70a20922900364934c015d48ece436f55e3440ee"
 
       def install
         bin.install "jwt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_darwin_amd64.tar.gz"
-      sha256 "7ced0f814378b3b58ae001f876178e6b4e8f579ba4cb24512eb50b1040cacab2"
+    if Hardware::CPU.arm?
+      url "https://github.com/pete911/jwt/releases/download/v1.0.5/jwt_1.0.5_darwin_arm64.tar.gz"
+      sha256 "de7091566b72b4172b31da930f09dfa6327eca8bd777dc1c2afa2d8527429bf0"
 
       def install
         bin.install "jwt"
@@ -27,17 +27,17 @@ class Jwt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_linux_amd64.tar.gz"
-      sha256 "f5f6a17fe6c12617686f967db73c87a48e7ab000d7c53597700959ad928a9228"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/pete911/jwt/releases/download/v1.0.5/jwt_1.0.5_linux_arm64.tar.gz"
+      sha256 "f2d772a964c6b1b80b1a23804eda688aecdd43270cb5d5e82f82886108508936"
 
       def install
         bin.install "jwt"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/jwt/releases/download/v1.0.4/jwt_1.0.4_linux_arm64.tar.gz"
-      sha256 "10f563bdf8c5fe4dbd32e216a5148a4d035ce3261a274f3dcb470fe8a71e4ac2"
+    if Hardware::CPU.intel?
+      url "https://github.com/pete911/jwt/releases/download/v1.0.5/jwt_1.0.5_linux_amd64.tar.gz"
+      sha256 "304461b843d814e024d956ac593ff844d20bbf0ed179ded341bc0d41c29d3797"
 
       def install
         bin.install "jwt"
