@@ -5,20 +5,20 @@
 class KubectlImage < Formula
   desc "List images in kubernetes cluster."
   homepage "https://github.com/pete911/kubectl-image"
-  version "1.0.7"
+  version "1.0.8"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.7/kubectl-image_1.0.7_darwin_arm64.tar.gz"
-      sha256 "ffe32bf9851428c0e3adafa9d874aa411ab49c012912dd3c3cf536f6a03fcb35"
+      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.8/kubectl-image_1.0.8_darwin_arm64.tar.gz"
+      sha256 "c503e3ac25b396faf48df64ca536984edf043aaa10d87dd3b5f744fbddd4b3f6"
 
       def install
         bin.install "kubectl-image"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.7/kubectl-image_1.0.7_darwin_amd64.tar.gz"
-      sha256 "eaa4bf3d8276305093b387cacf48b21baf16c3fb639d130a59119f9d105e973e"
+      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.8/kubectl-image_1.0.8_darwin_amd64.tar.gz"
+      sha256 "15c5173f4c1581f4b1dcb616f0d0b5689bd35184909951e1f13839f497caa905"
 
       def install
         bin.install "kubectl-image"
@@ -28,16 +28,16 @@ class KubectlImage < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.7/kubectl-image_1.0.7_linux_arm64.tar.gz"
-      sha256 "1adf5583416de13aef383fec4acfc743f513bc82d401ad4318e1d00ff4b4f3f3"
+      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.8/kubectl-image_1.0.8_linux_arm64.tar.gz"
+      sha256 "153c76a2b9c5a0b1559885e9266d6aacabb4baf738af88e86d0ab5983fbd10e5"
 
       def install
         bin.install "kubectl-image"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.7/kubectl-image_1.0.7_linux_amd64.tar.gz"
-      sha256 "9bf3af5bd8e1e5b096e78dd22b29b61df74ca08575459a2a740bbf75a4807247"
+      url "https://github.com/pete911/kubectl-image/releases/download/v1.0.8/kubectl-image_1.0.8_linux_amd64.tar.gz"
+      sha256 "1f121cffc0fee544dbf08ae4d7e7e02ec1577079e4c922e8d5e34db8a4c118e0"
 
       def install
         bin.install "kubectl-image"
