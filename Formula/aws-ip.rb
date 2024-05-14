@@ -5,20 +5,20 @@
 class AwsIp < Formula
   desc "find ip for aws services"
   homepage "https://github.com/pete911/aws-ip"
-  version "1.0.0"
+  version "1.0.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/aws-ip/releases/download/v1.0.0/aws-ip_1.0.0_darwin_amd64.tar.gz"
-      sha256 "32d204ca298b201fdc79e583c317030e7364c6a42ba10fbf363ef30aaade5f0b"
+      url "https://github.com/pete911/aws-ip/releases/download/v1.0.1/aws-ip_1.0.1_darwin_amd64.tar.gz"
+      sha256 "aec751ce063eb0a11f31aea89b6b09730c5502dc29e51253e1d5251422375c70"
 
       def install
         bin.install "aws-ip"
       end
     end
     on_arm do
-      url "https://github.com/pete911/aws-ip/releases/download/v1.0.0/aws-ip_1.0.0_darwin_arm64.tar.gz"
-      sha256 "9674477ec68f2f0826c12cf1a81c35fff3ba4b67ea357608c02c3f092a070a78"
+      url "https://github.com/pete911/aws-ip/releases/download/v1.0.1/aws-ip_1.0.1_darwin_arm64.tar.gz"
+      sha256 "fa4acbb7046626b6abe1423d826463c30471bacea6a15e53dbae3f83f7ae2b50"
 
       def install
         bin.install "aws-ip"
@@ -29,8 +29,8 @@ class AwsIp < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/aws-ip/releases/download/v1.0.0/aws-ip_1.0.0_linux_amd64.tar.gz"
-        sha256 "c078822f02a08f29e3e19e87970b80f1362492712b49068778f34326a1beae01"
+        url "https://github.com/pete911/aws-ip/releases/download/v1.0.1/aws-ip_1.0.1_linux_amd64.tar.gz"
+        sha256 "b3404b4a688973c70f63529020dd53e76419bac78e4a3133dd45d8d6308f9cd6"
 
         def install
           bin.install "aws-ip"
@@ -39,8 +39,8 @@ class AwsIp < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/aws-ip/releases/download/v1.0.0/aws-ip_1.0.0_linux_arm64.tar.gz"
-        sha256 "1ef10a3ec569c04b608c57e7169b86076955070623fcd783cd833faadb1c71d2"
+        url "https://github.com/pete911/aws-ip/releases/download/v1.0.1/aws-ip_1.0.1_linux_arm64.tar.gz"
+        sha256 "4f915c703bea144100bd8a25b46f53df66f1248add5a429428ae9c53b4daa675"
 
         def install
           bin.install "aws-ip"
