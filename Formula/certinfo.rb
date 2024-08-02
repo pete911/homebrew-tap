@@ -5,20 +5,20 @@
 class Certinfo < Formula
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.21"
+  version "1.0.22"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.21/certinfo_1.0.21_darwin_amd64.tar.gz"
-      sha256 "e61f2529fe163e3c02fc44adbc81119197d36cad967c2b3acbfbc8977d50de26"
+    on_intel do
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.22/certinfo_1.0.22_darwin_amd64.tar.gz"
+      sha256 "725cb133667e26ffdf0292814457a01dfaab8b7a9f7040af05ffaadf3c3ad1b3"
 
       def install
         bin.install "certinfo"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.21/certinfo_1.0.21_darwin_arm64.tar.gz"
-      sha256 "57509d51dbfc520c1c60437bb6529a62fd3e1128bcf27a470bbbe5e0b6fe3d2f"
+    on_arm do
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.22/certinfo_1.0.22_darwin_arm64.tar.gz"
+      sha256 "52287f30c788b8e1c32644259d69db37321f8e842c3d4d2646b22e0d32da0105"
 
       def install
         bin.install "certinfo"
@@ -27,20 +27,24 @@ class Certinfo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.21/certinfo_1.0.21_linux_arm64.tar.gz"
-      sha256 "bedaa48137a8c4ccf45e9b88adb29ad4c74d0f5d0fe1a9b930a71b99db7e1988"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pete911/certinfo/releases/download/v1.0.22/certinfo_1.0.22_linux_amd64.tar.gz"
+        sha256 "c412a09a99421b5c11fc0ec9c7eb555bfbfb44686a92360ee413c1a85cdf3612"
 
-      def install
-        bin.install "certinfo"
+        def install
+          bin.install "certinfo"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.21/certinfo_1.0.21_linux_amd64.tar.gz"
-      sha256 "56d12d859ff6bb22e03e0b5cc9af79494974a8f48d830d3d20548985f10a187c"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/pete911/certinfo/releases/download/v1.0.22/certinfo_1.0.22_linux_arm64.tar.gz"
+        sha256 "47716ef92a960004abe0734830919588000005a19413b54049df9c40ac022795"
 
-      def install
-        bin.install "certinfo"
+        def install
+          bin.install "certinfo"
+        end
       end
     end
   end
