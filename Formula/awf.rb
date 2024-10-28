@@ -5,20 +5,20 @@
 class Awf < Formula
   desc "Find AWS resources"
   homepage "https://github.com/pete911/awf"
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/awf/releases/download/v0.0.1/awf_0.0.1_darwin_amd64.tar.gz"
-      sha256 "fbe458c24d3e6603d0553e3b6eab40673f4783c230552d9670b189a51747417b"
+      url "https://github.com/pete911/awf/releases/download/v0.0.2/awf_0.0.2_darwin_amd64.tar.gz"
+      sha256 "e64c31322c32e95222142d2343152872e6e032f0e9c592271965559f3296f690"
 
       def install
         bin.install "awf"
       end
     end
     on_arm do
-      url "https://github.com/pete911/awf/releases/download/v0.0.1/awf_0.0.1_darwin_arm64.tar.gz"
-      sha256 "8d04020043fe64ea62759e8b3a98d6fe62aa407ca6f26dc81768e0f6738d694a"
+      url "https://github.com/pete911/awf/releases/download/v0.0.2/awf_0.0.2_darwin_arm64.tar.gz"
+      sha256 "01c8a07258eae38f58e213f87e91db5f11a489e7aa14e7936384c05e4633fc10"
 
       def install
         bin.install "awf"
@@ -29,8 +29,8 @@ class Awf < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/awf/releases/download/v0.0.1/awf_0.0.1_linux_amd64.tar.gz"
-        sha256 "677428162b2258ebb4c0faec0d9f59d1ba3c1bf92cd3dbf74f563dc335c1a0b7"
+        url "https://github.com/pete911/awf/releases/download/v0.0.2/awf_0.0.2_linux_amd64.tar.gz"
+        sha256 "49445cdd434fe30d4f88a7f33776428eb6b2131e45330f7088c1e62fd8a3527d"
 
         def install
           bin.install "awf"
@@ -39,8 +39,8 @@ class Awf < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/awf/releases/download/v0.0.1/awf_0.0.1_linux_arm64.tar.gz"
-        sha256 "58ec80b8bbd554a2d2498478acbeb6226faf6d31c85df23efd0d09f8686aeeaa"
+        url "https://github.com/pete911/awf/releases/download/v0.0.2/awf_0.0.2_linux_arm64.tar.gz"
+        sha256 "bf22807bc2fbb37cc52158a54b85f3889870c515512baff734f6cf657f3d5395"
 
         def install
           bin.install "awf"
