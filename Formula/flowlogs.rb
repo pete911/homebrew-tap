@@ -5,20 +5,20 @@
 class Flowlogs < Formula
   desc "Create and view AWS FlowLogs."
   homepage "https://github.com/pete911/flowlogs"
-  version "0.0.2"
+  version "0.0.3"
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/flowlogs/releases/download/v0.0.2/flowlogs_0.0.2_darwin_amd64.tar.gz"
-      sha256 "f35cbc209b207d997ce1e0b7fa3fb87868db9b8d547f0606212b7216ee8423fe"
+      url "https://github.com/pete911/flowlogs/releases/download/v0.0.3/flowlogs_0.0.3_darwin_amd64.tar.gz"
+      sha256 "8ae1595f1114775c49e387ee09df593842c45eaae6fc9c91978854081b8b1af7"
 
       def install
         bin.install "flowlogs"
       end
     end
     on_arm do
-      url "https://github.com/pete911/flowlogs/releases/download/v0.0.2/flowlogs_0.0.2_darwin_arm64.tar.gz"
-      sha256 "dd56633d60fd1fcb6445cc46ba083883b0700c7520041e4b72354d52f8b840b2"
+      url "https://github.com/pete911/flowlogs/releases/download/v0.0.3/flowlogs_0.0.3_darwin_arm64.tar.gz"
+      sha256 "ea346ed07f6914ce5ef1eacf196975ab46f412b7e09b47d3aff8fb73c5992042"
 
       def install
         bin.install "flowlogs"
@@ -29,8 +29,8 @@ class Flowlogs < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/flowlogs/releases/download/v0.0.2/flowlogs_0.0.2_linux_amd64.tar.gz"
-        sha256 "3a51c65dfad6163aad531f4bd5f2b6fe89cb033ffe12a32bd5c21a2f35554554"
+        url "https://github.com/pete911/flowlogs/releases/download/v0.0.3/flowlogs_0.0.3_linux_amd64.tar.gz"
+        sha256 "a3dad5170ffa93f2f06212233e3024bb8fcc276438efbf77a9c5ab93f03e0d84"
 
         def install
           bin.install "flowlogs"
@@ -39,8 +39,8 @@ class Flowlogs < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/flowlogs/releases/download/v0.0.2/flowlogs_0.0.2_linux_arm64.tar.gz"
-        sha256 "4290d13c8b1426b04dc1b9aac55c8d18318a6529e74104d16ec5229eabd0b4ed"
+        url "https://github.com/pete911/flowlogs/releases/download/v0.0.3/flowlogs_0.0.3_linux_arm64.tar.gz"
+        sha256 "6293796f3c99e1a7c4c2deda65e0c7e0f6b51d94d42a29d7653690b6dbb172e2"
 
         def install
           bin.install "flowlogs"
