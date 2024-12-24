@@ -5,20 +5,20 @@
 class Certinfo < Formula
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.29"
+  version "1.0.30"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.29/certinfo_1.0.29_darwin_amd64.tar.gz"
-      sha256 "23a68d59fc520410ab8d822c353192e98690a7f955772b57b2b57568b373be15"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.30/certinfo_1.0.30_darwin_amd64.tar.gz"
+      sha256 "e473cb64cbbdb373048555411c67c318410ed2dae77e46bc7069bd5c9b9088ab"
 
       def install
         bin.install "certinfo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.29/certinfo_1.0.29_darwin_arm64.tar.gz"
-      sha256 "316454262301b4d7a5382b6ef4ecfedc45f4f0833f246d247279733df68fa30f"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.30/certinfo_1.0.30_darwin_arm64.tar.gz"
+      sha256 "fed87808c0fb54e19f7d494f4874128d35ba6f839c59c3f08ca60f88498e2fff"
 
       def install
         bin.install "certinfo"
@@ -29,8 +29,8 @@ class Certinfo < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/certinfo/releases/download/v1.0.29/certinfo_1.0.29_linux_amd64.tar.gz"
-        sha256 "fb449049dfcc039faed2b062b7dd6e5708ebe15af01cd50faefefe39415eec03"
+        url "https://github.com/pete911/certinfo/releases/download/v1.0.30/certinfo_1.0.30_linux_amd64.tar.gz"
+        sha256 "515d025601f2bf85f71ad9695f80ac70dc949dc13415b9d9bc07e022c2e091b2"
 
         def install
           bin.install "certinfo"
@@ -39,8 +39,8 @@ class Certinfo < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/pete911/certinfo/releases/download/v1.0.29/certinfo_1.0.29_linux_arm64.tar.gz"
-        sha256 "9bdcdee0c196c61f8deb72d24fbe1912dd04000d69ae66cf2e9a24c51c668bda"
+        url "https://github.com/pete911/certinfo/releases/download/v1.0.30/certinfo_1.0.30_linux_arm64.tar.gz"
+        sha256 "1a79afc78f08e1c8fd7f32af2f1ec4ea5d1dcb938e6bcf84a0298da0c2187747"
 
         def install
           bin.install "certinfo"
