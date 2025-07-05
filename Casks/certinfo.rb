@@ -2,7 +2,7 @@
 cask "certinfo" do
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.34"
+  version "1.0.35"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "certinfo" do
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.34/certinfo_1.0.34_darwin_amd64.tar.gz"
-      sha256 "671d9ea5a7ff98fd466ffa50e178c326423ddf47850da3ea7e3668f2624b799a"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.35/certinfo_1.0.35_darwin_amd64.tar.gz"
+      sha256 "90b9cd10cb9ae8ff43aba53a609d381825af9f6b891e978e2299b776f8f545b4"
     end
     on_arm do
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.34/certinfo_1.0.34_darwin_arm64.tar.gz"
-      sha256 "6a9f2e9f28d6a82de2c7bef5a850175f0f873f73449a8f093b8103cc6d3ab7e6"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.35/certinfo_1.0.35_darwin_arm64.tar.gz"
+      sha256 "f2f3fcd3b7853cefec8b8eee0ec42930d5f9f7eef8a41c3ee9d33d1de7931cae"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.34/certinfo_1.0.34_linux_amd64.tar.gz"
-      sha256 "cd492afb74518d273ffa6c5c80fcba4f7c921d5177363347b06309144499cef3"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.35/certinfo_1.0.35_linux_amd64.tar.gz"
+      sha256 "72c390b52c2360405ae45c0678d9b5fbf924a7c506e3bcd86feeb58298fda420"
     end
     on_arm do
-      url "https://github.com/pete911/certinfo/releases/download/v1.0.34/certinfo_1.0.34_linux_arm64.tar.gz"
-      sha256 "c215ed0a13c77840e5dfe30b63c018acf6104aa619775d096eb7937fc1307b9f"
+      url "https://github.com/pete911/certinfo/releases/download/v1.0.35/certinfo_1.0.35_linux_arm64.tar.gz"
+      sha256 "b44f417a618f06019c36ac4580bdc1a73b70dbda2cde714c6af271af697429bf"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/certinfo"]
     end
   end
 
