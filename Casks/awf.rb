@@ -2,7 +2,7 @@
 cask "awf" do
   desc "Find AWS resources"
   homepage "https://github.com/pete911/awf"
-  version "0.0.3"
+  version "0.0.4"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "awf" do
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/awf/releases/download/v0.0.3/awf_0.0.3_darwin_amd64.tar.gz"
-      sha256 "f2c26af4860cc99d660156cece4f49d1b2b3ed24c745b4dbeba17f608f9a12b6"
+      url "https://github.com/pete911/awf/releases/download/v0.0.4/awf_0.0.4_darwin_amd64.tar.gz"
+      sha256 "59153a3cce4a5eac49a303f3aa0d17d33d7f3c35ca8f65718645cfe11ff94b72"
     end
     on_arm do
-      url "https://github.com/pete911/awf/releases/download/v0.0.3/awf_0.0.3_darwin_arm64.tar.gz"
-      sha256 "49f39a141dabadf268c9e2c7881d83494966e846fe88001d7747cd317d887c98"
+      url "https://github.com/pete911/awf/releases/download/v0.0.4/awf_0.0.4_darwin_arm64.tar.gz"
+      sha256 "32cb3bc387e5f559dc0d3cf1275d4b264ebb670262e152f98dd655941af66f3f"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/awf/releases/download/v0.0.3/awf_0.0.3_linux_amd64.tar.gz"
-      sha256 "aba82fd1def11f3d12150ffc7f198ce1761ecb361818e96fc45c5840a7832a7e"
+      url "https://github.com/pete911/awf/releases/download/v0.0.4/awf_0.0.4_linux_amd64.tar.gz"
+      sha256 "a5f640e737ee57d1abddea23788ab1d153654dfb9fabdb46051e9e4ec0f70328"
     end
     on_arm do
-      url "https://github.com/pete911/awf/releases/download/v0.0.3/awf_0.0.3_linux_arm64.tar.gz"
-      sha256 "e95b7ec7f90dfbdf5fe865f6d83f64427aa6ffdb4f7ae4cb40db8658d90e2659"
+      url "https://github.com/pete911/awf/releases/download/v0.0.4/awf_0.0.4_linux_arm64.tar.gz"
+      sha256 "d1dcce05181ff6cf0eb9a92342e090c8ee891993d48f1cfeb2b7ed18af6ec536"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/awf"]
     end
   end
 
