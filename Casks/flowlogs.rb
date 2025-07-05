@@ -2,7 +2,7 @@
 cask "flowlogs" do
   desc "Create and view AWS FlowLogs."
   homepage "https://github.com/pete911/flowlogs"
-  version "0.0.9"
+  version "0.0.10"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "flowlogs" do
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/flowlogs/releases/download/v0.0.9/flowlogs_0.0.9_darwin_amd64.tar.gz"
-      sha256 "525103a0eafb1ccf2dadb8c47cc094536b4281c2dff01aeaede81647d0d62214"
+      url "https://github.com/pete911/flowlogs/releases/download/v0.0.10/flowlogs_0.0.10_darwin_amd64.tar.gz"
+      sha256 "c27d89b968102edf997ce8bf63a2ddeb27fc9f862272d656aa7277a4844265a3"
     end
     on_arm do
-      url "https://github.com/pete911/flowlogs/releases/download/v0.0.9/flowlogs_0.0.9_darwin_arm64.tar.gz"
-      sha256 "f520607e6c3239af9c9e9e2f3eea997ac4377c63aad8e334d8e8db213e29e7ef"
+      url "https://github.com/pete911/flowlogs/releases/download/v0.0.10/flowlogs_0.0.10_darwin_arm64.tar.gz"
+      sha256 "35ab89d4ece8da528a5f2e6daf2ff79902b5b702f4a0c9bc0d52a3a30139f28d"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/flowlogs/releases/download/v0.0.9/flowlogs_0.0.9_linux_amd64.tar.gz"
-      sha256 "65f373e6f4533e3af4348ac967bb7a24de8ef901162c78bfc06acf8fb4a42393"
+      url "https://github.com/pete911/flowlogs/releases/download/v0.0.10/flowlogs_0.0.10_linux_amd64.tar.gz"
+      sha256 "fc3a11f4c8079b4a4ad82a50748975c05dd23804b1ae173d280360f260618806"
     end
     on_arm do
-      url "https://github.com/pete911/flowlogs/releases/download/v0.0.9/flowlogs_0.0.9_linux_arm64.tar.gz"
-      sha256 "1a08a7aef507924467f7447c2efc12f1d028d360a1294c2bc4a47e8a8370aa85"
+      url "https://github.com/pete911/flowlogs/releases/download/v0.0.10/flowlogs_0.0.10_linux_arm64.tar.gz"
+      sha256 "9db0dbdc6863420b9f65758a693efc004f679e41f4cf343bad914a70287c1e41"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/flowlogs"]
     end
   end
 
