@@ -2,7 +2,7 @@
 cask "aws-ip" do
   desc "find ip for aws services"
   homepage "https://github.com/pete911/aws-ip"
-  version "1.0.4"
+  version "1.0.5"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "aws-ip" do
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/aws-ip/releases/download/v1.0.4/aws-ip_1.0.4_darwin_amd64.tar.gz"
-      sha256 "162040b058a24a6ab350c0288ac44d6e35d9b04b81ffe91b833c1f739ec785e8"
+      url "https://github.com/pete911/aws-ip/releases/download/v1.0.5/aws-ip_1.0.5_darwin_amd64.tar.gz"
+      sha256 "d587e2a6174842861bccd2b3c9605ddb03869efd59ea1b8c70d216823d8aa589"
     end
     on_arm do
-      url "https://github.com/pete911/aws-ip/releases/download/v1.0.4/aws-ip_1.0.4_darwin_arm64.tar.gz"
-      sha256 "87f31cf2360e900592ec07570a04533837f623dcf1ea528c03f95ec343b074ab"
+      url "https://github.com/pete911/aws-ip/releases/download/v1.0.5/aws-ip_1.0.5_darwin_arm64.tar.gz"
+      sha256 "22031c5c2514cf356ae17648f4a791304c59fe494629fd66577d883d3d52d02a"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/aws-ip/releases/download/v1.0.4/aws-ip_1.0.4_linux_amd64.tar.gz"
-      sha256 "430ee503b5307cadc4ca6dfdfbc325ef9654d61e5d19a85f04c19ac0f9247943"
+      url "https://github.com/pete911/aws-ip/releases/download/v1.0.5/aws-ip_1.0.5_linux_amd64.tar.gz"
+      sha256 "1cb25596580abad703e9f133eb5749ce322044271ab80510549b1c5d09e799f1"
     end
     on_arm do
-      url "https://github.com/pete911/aws-ip/releases/download/v1.0.4/aws-ip_1.0.4_linux_arm64.tar.gz"
-      sha256 "04cbac8a60234444e5f84baf1b88c25588b27a22fbf657341ee447cc61a90534"
+      url "https://github.com/pete911/aws-ip/releases/download/v1.0.5/aws-ip_1.0.5_linux_arm64.tar.gz"
+      sha256 "8c0e710f3887b9bf50e1e11f0fd3b1325e8a03d0f5e746f8bd459885ccbe3169"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/aws-ip"]
     end
   end
 
