@@ -2,7 +2,7 @@
 cask "ipcalc" do
   desc "IP calculator"
   homepage "https://github.com/pete911/ipcalc"
-  version "1.0.2"
+  version "1.0.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "ipcalc" do
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.2/ipcalc_1.0.2_darwin_amd64.tar.gz"
-      sha256 "bb5c0d2137cb5bb422383f29c98112713377dc6c5a6558379d616100ee03ef66"
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.3/ipcalc_1.0.3_darwin_amd64.tar.gz"
+      sha256 "40123607ce0f0796e52da6178840a49f6f49b0c6cca88b1f282726ee02938340"
     end
     on_arm do
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.2/ipcalc_1.0.2_darwin_arm64.tar.gz"
-      sha256 "2c3ed0934acbe7aec52f56e280e8e7e2af1586cfb109a057b53662b9bd8ef94a"
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.3/ipcalc_1.0.3_darwin_arm64.tar.gz"
+      sha256 "c27fdb9396decdcb2b8d090cdbef5ccce89c39124bf285bc8b6ce9f994721283"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.2/ipcalc_1.0.2_linux_amd64.tar.gz"
-      sha256 "bc73661ef18edb45772e51767edbb0a8575868a201ef71af001b32df6d00fac2"
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.3/ipcalc_1.0.3_linux_amd64.tar.gz"
+      sha256 "b30966a1a8dcaad1b2c9dd8ad5c67e67233e6869a0d3edef4ed0dfd98548dc04"
     end
     on_arm do
-      url "https://github.com/pete911/ipcalc/releases/download/v1.0.2/ipcalc_1.0.2_linux_arm64.tar.gz"
-      sha256 "c9c87f14d22c9c8a989760155f5f637669dcfd00ee7e2ebb8692c72a407069cf"
+      url "https://github.com/pete911/ipcalc/releases/download/v1.0.3/ipcalc_1.0.3_linux_arm64.tar.gz"
+      sha256 "409472612c1e430f8ede9aa2aeebd90188be2b9fd0962038456ce6ff57b86772"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/ipcalc"]
     end
   end
 
