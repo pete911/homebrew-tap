@@ -2,33 +2,33 @@
 cask "aws-vpn" do
   desc "Create VPN on AWS."
   homepage "https://github.com/pete911/aws-vpn"
-  version "0.0.1"
+  version "0.0.2"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
-  binary "aws-ip"
+  binary "aws-vpn"
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.1/aws-vpn_0.0.1_darwin_amd64.tar.gz"
-      sha256 "aa7a7b6885d85bce01334214a36da288a98e4200e624434052fcabac2d5e5730"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_darwin_amd64.tar.gz"
+      sha256 "f1a23225d65be03d1764bab77a19e64978088ccfdf2c3f8a7cc38cff171976f5"
     end
     on_arm do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.1/aws-vpn_0.0.1_darwin_arm64.tar.gz"
-      sha256 "68f7a3c1db16e49964b7f5d21fd34768235eb0473b15aee3cfc1ad2226ae1ce3"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_darwin_arm64.tar.gz"
+      sha256 "a825eb32f5b604d63f87ae75e31d12f78f42e957a0ce4b1d14e7d9a86db09311"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.1/aws-vpn_0.0.1_linux_amd64.tar.gz"
-      sha256 "85c91d26cdcd39f8ec9db958f66b81118f485295db79fbc4f256bab20e288ed8"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_linux_amd64.tar.gz"
+      sha256 "f3786b453392d54bee790c7e6d83cefe7510dd741ad7079ab704e2fb6dca538f"
     end
     on_arm do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.1/aws-vpn_0.0.1_linux_arm64.tar.gz"
-      sha256 "37a8af70f0ff50bee00e3214107c0a1426a05868898a2d39b3d617584cf660e8"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_linux_arm64.tar.gz"
+      sha256 "9d5435a597abeb5ab0b5109242d03a030237dcd6f465870976a6834fc1c5af6f"
     end
   end
 
