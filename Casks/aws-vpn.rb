@@ -2,7 +2,7 @@
 cask "aws-vpn" do
   desc "Create VPN on AWS."
   homepage "https://github.com/pete911/aws-vpn"
-  version "0.0.2"
+  version "0.0.3"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "aws-vpn" do
 
   on_macos do
     on_intel do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_darwin_amd64.tar.gz"
-      sha256 "f1a23225d65be03d1764bab77a19e64978088ccfdf2c3f8a7cc38cff171976f5"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.3/aws-vpn_0.0.3_darwin_amd64.tar.gz"
+      sha256 "cb52c206d320194ef259ae30453654aa9611da643edd459207a9a2b86306532c"
     end
     on_arm do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_darwin_arm64.tar.gz"
-      sha256 "a825eb32f5b604d63f87ae75e31d12f78f42e957a0ce4b1d14e7d9a86db09311"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.3/aws-vpn_0.0.3_darwin_arm64.tar.gz"
+      sha256 "3af8e6264e0da4662ef36c7b8ffa39c01251b97cdcc8e90241b3c4d4ed1fcb6e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_linux_amd64.tar.gz"
-      sha256 "f3786b453392d54bee790c7e6d83cefe7510dd741ad7079ab704e2fb6dca538f"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.3/aws-vpn_0.0.3_linux_amd64.tar.gz"
+      sha256 "39a2d5c77473554d07f0a1a9847c4dd6d38bdd7618356cf465f0a018c813d9ae"
     end
     on_arm do
-      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.2/aws-vpn_0.0.2_linux_arm64.tar.gz"
-      sha256 "9d5435a597abeb5ab0b5109242d03a030237dcd6f465870976a6834fc1c5af6f"
+      url "https://github.com/pete911/aws-vpn/releases/download/v0.0.3/aws-vpn_0.0.3_linux_arm64.tar.gz"
+      sha256 "43a481a28208fe3fdbe5d24e7e154edb392709281b99bc0a3799be5045059f3d"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/aws-vpn"]
     end
   end
 
