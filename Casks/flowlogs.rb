@@ -3,7 +3,7 @@ cask "flowlogs" do
   name "flowlogs"
   desc "Create and view AWS FlowLogs."
   homepage "https://github.com/pete911/flowlogs"
-  version "0.0.11"
+  version "0.0.12"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,27 +14,27 @@ cask "flowlogs" do
   on_macos do
     on_intel do
       url "https://github.com/pete911/flowlogs/releases/download/v#{version}/flowlogs_#{version}_darwin_amd64.tar.gz"
-      sha256 "132c2fde260a590db6aeac7617afc737c7b19e6858035966555b54589910aa17"
+      sha256 "0bc4ae5ca2ab99075d2a9cf21be7ad0e8a753e906739735651a5c763c8fe1462"
     end
     on_arm do
       url "https://github.com/pete911/flowlogs/releases/download/v#{version}/flowlogs_#{version}_darwin_arm64.tar.gz"
-      sha256 "56e28d6c85f41786515360a6634f2522f3301a00db434c7eabe7958ff3315b99"
+      sha256 "d3d609c2ae01559bbac08902254691d9a49a44fa7e641df4034c925712e32658"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/pete911/flowlogs/releases/download/v#{version}/flowlogs_#{version}_linux_amd64.tar.gz"
-      sha256 "7515fe35a3f4ce00d043ce6ec69b30b801cac55903c2f5cd547e41d482c6c132"
+      sha256 "152b2e81804499dd715d6f284fcc9517b682b7170844defc3fce9bb8ccbf5e9b"
     end
     on_arm do
       url "https://github.com/pete911/flowlogs/releases/download/v#{version}/flowlogs_#{version}_linux_arm64.tar.gz"
-      sha256 "ec8d3d0d835771c15a54d2fbfd440f6ba2607ff6c55924ba39422576e221ac77"
+      sha256 "793ce2aa0554bdad1ed0b58b3cb783ca801bf54ab5c1e0735452dad83bf2c1ec"
     end
   end
 
   postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+    if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/flowlogs"]
     end
   end
