@@ -3,7 +3,7 @@ cask "certinfo" do
   name "certinfo"
   desc "Print x509 certificate info."
   homepage "https://github.com/pete911/certinfo"
-  version "1.0.39"
+  version "1.0.40"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "certinfo" do
   on_macos do
     on_intel do
       url "https://github.com/pete911/certinfo/releases/download/v#{version}/certinfo_#{version}_darwin_amd64.tar.gz"
-      sha256 "f725c57a70a223556a14c94de39f48559219d99d8bb8990ce8ad8e15bed729ee"
+      sha256 "7ba70ef013ccd49edb7ad34a448541198427008f8653a363940b677f7ed632dc"
     end
     on_arm do
       url "https://github.com/pete911/certinfo/releases/download/v#{version}/certinfo_#{version}_darwin_arm64.tar.gz"
-      sha256 "02af6aa2130f7cb43bc7f520b9fbe14eefa598e85a3eeec3f71ad9da95de9731"
+      sha256 "eb63c103b6413b87aa6e144bd0aabfdefd167167e3684443726865bfff79cf65"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/pete911/certinfo/releases/download/v#{version}/certinfo_#{version}_linux_amd64.tar.gz"
-      sha256 "9aaa84e6ed8990672895947d402af051ba86a3ec3fb7f46e987120d75170878b"
+      sha256 "7e29240b66465144c6cf8a0ac5a6bb4bfdaa842f0e5d85fad2b3a5cfb00cd753"
     end
     on_arm do
       url "https://github.com/pete911/certinfo/releases/download/v#{version}/certinfo_#{version}_linux_arm64.tar.gz"
-      sha256 "d8302f2832f6d1868a32c2681c3c00aca5262ebda1572a466c2c27610b0e1f30"
+      sha256 "5d8c6d4937bad25ea287e0e0f04160e79753b196d15d6d4f2c3f1912d49cb592"
     end
   end
 
